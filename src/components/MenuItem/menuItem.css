@@ -1,0 +1,46 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-sm) 0;
+}
+
+.menu-content {
+  width: 300px;
+  height: 80px;
+  padding: 0 var(--space-lg);
+  padding: 0 var(--space-lg);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(28, 25, 22, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-content img {
+  width: 34px;
+  height: 34px;
+  transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-content img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  filter: brightness(1.2);
+  opacity: 0.9;
+}
+
+.menu-content .active {
+  border-bottom: 2px solid var(--color-primary);
+  padding: 4px;
+  transition: border-color 0.3s ease;
+}

@@ -1,0 +1,36 @@
+:root {
+  /* Backgrounds */
+  --color-bg: #14110e;
+  --color-surface: #1c1916;
+  --color-border: #2a2521;
+
+  /* Text */
+  --color-text-primary: #f5f3ef;
+  --color-text-secondary: #b8b2a8;
+
+  /* Brand - Food Accent */
+  --color-primary: #e07a3f;
+  --color-primary-hover: #c8652e;
+  --color-primary-soft: #f1b18a;
+
+  /* Secondary - Natural */
+  --color-secondary: #7c8f6a;
+  --color-secondary-soft: #aebfa0;
+
+  /* Status */
+  --color-success: #8faf7b;
+  --color-error: #d1655d;
+  --color-warning: #e6a65c;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
