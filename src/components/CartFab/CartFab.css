@@ -1,0 +1,50 @@
+.cfab {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.85);
+  backdrop-filter: blur(10px);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.cfab:hover {
+  transform: translateY(-2px);
+  border-color: rgba(224, 122, 63, 0.45);
+}
+
+.cfab__icon {
+  width: 26px;
+  height: 26px;
+}
+
+.cfab__badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #14110e;
+  font-weight: 900;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-bg);
+}
+
+@media (max-width: 520px) {
+  .cfab {
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+}

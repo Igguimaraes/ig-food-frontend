@@ -1,0 +1,229 @@
+.odm-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.odm-overlayClose {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  border: 0;
+  cursor: pointer;
+}
+
+.odm-modal {
+  position: relative;
+  width: min(980px, 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: rgba(20, 17, 14, 0.95);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+  padding: var(--space-md);
+  z-index: 1;
+}
+
+.odm-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.odm-title {
+  color: var(--color-text-primary);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.odm-sub {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.odm-muted {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.odm-close {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.6);
+  color: var(--color-text-primary);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.odm-close:hover {
+  border-color: rgba(224, 122, 63, 0.5);
+}
+
+.odm-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-md);
+}
+
+@media (max-width: 900px) {
+  .odm-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.odm-card {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.45);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+.odm-cardTitle {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.odm-kv {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(42, 37, 33, 0.8);
+}
+
+.odm-kv:last-child {
+  border-bottom: 0;
+}
+
+.odm-k {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.odm-v {
+  color: var(--color-text-primary);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.odm-strong {
+  letter-spacing: 0.2px;
+}
+
+.odm-items {
+  display: grid;
+  gap: 10px;
+}
+
+.odm-item {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(42, 37, 33, 0.8);
+  background: rgba(20, 17, 14, 0.35);
+}
+
+.odm-itemName {
+  color: var(--color-text-primary);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.odm-itemTotal {
+  color: var(--color-text-primary);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.odm-empty {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+.odm-actions {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.odm-btn {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.6);
+  color: var(--color-text-primary);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.15s ease;
+}
+
+.odm-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.odm-btn--ghost:hover {
+  border-color: rgba(224, 122, 63, 0.5);
+}
+
+.odm-btn--primary {
+  border-color: rgba(224, 122, 63, 0.45);
+  background: rgba(224, 122, 63, 0.16);
+}
+
+.odm-btn--primary:hover {
+  border-color: rgba(224, 122, 63, 0.7);
+  background: rgba(224, 122, 63, 0.22);
+}
+
+/* Badges no modal */
+.odm-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(20, 17, 14, 0.35);
+  color: var(--color-text-primary);
+}
+
+.odm-badge--RECEBIDO {
+  border-color: rgba(224, 122, 63, 0.35);
+  background: rgba(224, 122, 63, 0.12);
+}
+
+.odm-badge--PREPARANDO {
+  border-color: rgba(230, 166, 92, 0.35);
+  background: rgba(230, 166, 92, 0.12);
+}
+
+.odm-badge--PRONTO {
+  border-color: rgba(124, 143, 106, 0.35);
+  background: rgba(124, 143, 106, 0.12);
+}
+
+.odm-badge--ENTREGUE {
+  border-color: rgba(143, 175, 123, 0.35);
+  background: rgba(143, 175, 123, 0.12);
+}
+
+.odm-badge--CANCELADO {
+  border-color: rgba(209, 101, 93, 0.35);
+  background: rgba(209, 101, 93, 0.12);
+}

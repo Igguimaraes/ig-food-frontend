@@ -3,19 +3,21 @@ import { NavLink } from "react-router-dom";
 
 const MenuItem = () => {
   return (
-    <section className="menu">
+    <nav className="menu" aria-label="Navegação principal">
       <div className="menu-content">
-        <NavLink to="/" end>
-          <img src="/assets/store.png" alt="Home" />
+        <NavLink to="/" end className="menu-link">
+          <img src="/assets/store.png" alt="Loja" />
         </NavLink>
-        <NavLink to="/order">
-          <img src="/assets/order.png" alt="Order" />
+
+        <NavLink to="/order" className="menu-link">
+          <img src="/assets/order.png" alt="Pedidos" />
         </NavLink>
-        <NavLink to="/profile">
-          <img src="/assets/profile.png" alt="Profile" />
+
+        <NavLink to="/profile" className="menu-link">
+          <img src="/assets/profile.png" alt="Perfil" />
         </NavLink>
       </div>
-    </section>
+    </nav>
   );
 };
 

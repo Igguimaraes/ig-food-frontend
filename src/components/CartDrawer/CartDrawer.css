@@ -1,0 +1,295 @@
+.cd {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: fit-content;
+  position: sticky;
+  top: var(--space-md);
+}
+
+.cd__header {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cd__title {
+  color: var(--color-text-primary);
+  font-weight: 900;
+}
+
+.cd__sub {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.cd__toggle {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.cd__toggle:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.cd--closed .cd__body {
+  display: none;
+}
+
+.cd__body {
+  padding: var(--space-md);
+}
+
+.cd__empty {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.cd__list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.cd__item {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-md);
+}
+
+.cd__itemTop {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.cd__name {
+  color: var(--color-text-primary);
+  font-weight: 800;
+}
+
+.cd__price {
+  margin-top: 4px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.cd__remove {
+  border: 0;
+  background: rgba(209, 101, 93, 0.12);
+  color: var(--color-error);
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 900;
+  height: fit-content;
+}
+
+.cd__actions {
+  margin-top: var(--space-sm);
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.cd__step {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.cd__qty {
+  min-width: 44px;
+  text-align: center;
+  font-weight: 900;
+  color: var(--color-text-primary);
+}
+
+.cd__total {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  font-weight: 900;
+  color: var(--color-text-primary);
+}
+
+.cd__finish {
+  width: 100%;
+  margin-top: var(--space-md);
+  border: 0;
+  border-radius: var(--radius-md);
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 900;
+  background: var(--color-primary);
+  color: #14110e;
+}
+
+.cd__finish:hover {
+  background: var(--color-primary-hover);
+}
+
+.cd__hint {
+  margin-top: var(--space-sm);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+/* Botão flutuante do carrinho quando está fechado */
+.cd-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 999;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.88);
+  backdrop-filter: blur(10px);
+
+  color: var(--color-text-primary);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.cd-fab__icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.cd-fab__text {
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.cd-fab__badge {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-primary);
+  color: #14110e;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cd__coupon {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(42, 37, 33, 0.8);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.cd__couponRow {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.cd__couponInput {
+  flex: 1;
+  border: 1px solid var(--color-border);
+  background: rgba(28, 25, 22, 0.6);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  outline: none;
+}
+
+.cd__couponInput:focus {
+  border-color: rgba(224, 122, 63, 0.45);
+}
+
+.cd__couponBtn {
+  border: 0;
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 900;
+  background: var(--color-primary);
+  color: #14110e;
+  white-space: nowrap;
+}
+
+.cd__couponBtn:hover {
+  background: var(--color-primary-hover);
+}
+
+.cd__couponBtn--ghost {
+  border: 1px solid rgba(224, 122, 63, 0.35);
+  background: rgba(224, 122, 63, 0.12);
+  color: var(--color-text-primary);
+}
+
+.cd__couponBtn--ghost:hover {
+  border-color: rgba(224, 122, 63, 0.6);
+  background: rgba(224, 122, 63, 0.18);
+}
+
+.cd__couponOk {
+  color: var(--color-secondary-soft);
+  font-size: 12px;
+}
+
+.cd__couponErr {
+  color: var(--color-error);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cd__summary {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(42, 37, 33, 0.8);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.cd__sumRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.cd__sumRow strong {
+  color: var(--color-text-primary);
+}
+
+.cd__discount {
+  color: var(--color-primary-soft);
+}
+
+.cd__sumRow--total {
+  padding-top: var(--space-sm);
+  border-top: 1px dashed rgba(42, 37, 33, 0.8);
+  font-size: 14px;
+}

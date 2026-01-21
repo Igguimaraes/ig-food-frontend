@@ -1,0 +1,33 @@
+.adm-tabs {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.adm-tab {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.6);
+  color: var(--color-text-secondary);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.adm-tab.is-active {
+  color: var(--color-text-primary);
+  border-color: rgba(224, 122, 63, 0.5);
+  background: rgba(224, 122, 63, 0.15);
+}
+.adm-input {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.55);
+  color: var(--color-text-primary);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  outline: none;
+  min-width: 260px;
+}
+.adm-input:focus {
+  border-color: rgba(224, 122, 63, 0.55);
+}

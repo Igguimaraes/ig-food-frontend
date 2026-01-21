@@ -1,46 +1,69 @@
+/* 
+  O MainLayout (header) já centraliza e controla o topo.
+  Aqui a gente só estiliza o "pill" e os links.
+*/
+
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
   display: flex;
   justify-content: center;
-  padding: var(--space-sm) 0;
+  width: 100%;
 }
 
 .menu-content {
-  width: 300px;
-  height: 80px;
+  width: min(360px, 100%);
+  height: 72px;
+
   padding: 0 var(--space-lg);
-  padding: 0 var(--space-lg);
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  background: rgba(28, 25, 22, 0.8);
+  background: rgba(28, 25, 22, 0.78);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   backdrop-filter: blur(8px);
-  border-radius: 20px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
 }
 
-.menu-content img {
-  width: 34px;
-  height: 34px;
+/* Link vira “botão” com área clicável consistente */
+.menu-link {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+
+  display: grid;
+  place-items: center;
+
+  text-decoration: none;
+  border: 1px solid transparent;
+
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-link img {
+  width: 32px;
+  height: 32px;
+  display: block;
+
   transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
-  cursor: pointer;
 }
 
-.menu-content img:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease;
-  filter: brightness(1.2);
-  opacity: 0.9;
+/* Hover */
+.menu-link:hover {
+  background: rgba(224, 122, 63, 0.08);
+  border-color: rgba(224, 122, 63, 0.25);
 }
 
-.menu-content .active {
-  border-bottom: 2px solid var(--color-primary);
-  padding: 4px;
-  transition: border-color 0.3s ease;
+.menu-link:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.15);
+  opacity: 0.95;
+}
+
+/* Active (NavLink aplica a classe "active") */
+.menu-link.active {
+  background: rgba(224, 122, 63, 0.12);
+  border-color: rgba(224, 122, 63, 0.35);
+  box-shadow: inset 0 -2px 0 var(--color-primary);
 }

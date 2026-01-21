@@ -1,0 +1,254 @@
+/* src/pages/Admin/AdminOrders.css */
+.adm-page {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.adm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.adm-title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  font-size: 22px;
+}
+
+.adm-sub {
+  margin: 6px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.adm-card {
+  border: 1px solid var(--color-border);
+  background: rgba(20, 17, 14, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+.adm-cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.adm-cardTitle {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.adm-cardSub {
+  margin-top: 4px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.adm-loading,
+.adm-empty {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  padding: var(--space-sm) 0;
+}
+
+.adm-error {
+  margin-top: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(209, 101, 93, 0.25);
+  background: rgba(209, 101, 93, 0.1);
+  color: var(--color-error);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* Buttons */
+.adm-btn {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.6);
+  color: var(--color-text-primary);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.15s ease;
+}
+
+.adm-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.adm-btn--ghost:hover {
+  border-color: rgba(224, 122, 63, 0.5);
+}
+
+.adm-btn--primary {
+  border-color: rgba(224, 122, 63, 0.45);
+  background: rgba(224, 122, 63, 0.16);
+}
+
+.adm-btn--primary:hover {
+  border-color: rgba(224, 122, 63, 0.7);
+  background: rgba(224, 122, 63, 0.22);
+}
+
+.adm-btn--danger {
+  border-color: rgba(209, 101, 93, 0.35);
+  background: rgba(209, 101, 93, 0.12);
+}
+
+.adm-btn--danger:hover {
+  border-color: rgba(209, 101, 93, 0.65);
+  background: rgba(209, 101, 93, 0.18);
+}
+
+/* Metrics */
+.adm-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 900px) {
+  .adm-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adm-metric {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.45);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+.adm-metricLabel {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.adm-metricValue {
+  margin-top: 8px;
+  color: var(--color-text-primary);
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.adm-metricHint {
+  margin-top: 6px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+/* Orders list */
+.adm-list {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.adm-order {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.45);
+}
+
+@media (max-width: 980px) {
+  .adm-order {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adm-orderId {
+  color: var(--color-text-primary);
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.adm-orderMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: 6px;
+}
+
+.adm-muted {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.adm-items {
+  display: grid;
+  gap: 6px;
+  margin-top: var(--space-sm);
+}
+
+.adm-item {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.adm-itemName {
+  color: var(--color-text-primary);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.adm-orderRight {
+  display: grid;
+  gap: var(--space-sm);
+  align-content: start;
+}
+
+/* Badges */
+.adm-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(20, 17, 14, 0.35);
+  color: var(--color-text-primary);
+}
+
+.adm-badge--RECEBIDO {
+  border-color: rgba(224, 122, 63, 0.35);
+  background: rgba(224, 122, 63, 0.12);
+}
+
+.adm-badge--PREPARANDO {
+  border-color: rgba(230, 166, 92, 0.35);
+  background: rgba(230, 166, 92, 0.12);
+}
+
+.adm-badge--PRONTO {
+  border-color: rgba(124, 143, 106, 0.35);
+  background: rgba(124, 143, 106, 0.12);
+}
+
+.adm-badge--ENTREGUE {
+  border-color: rgba(143, 175, 123, 0.35);
+  background: rgba(143, 175, 123, 0.12);
+}

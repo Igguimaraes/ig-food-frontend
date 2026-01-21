@@ -1,0 +1,175 @@
+.hero {
+  border: 1px solid var(--color-border);
+  background: rgba(20, 17, 14, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.hero__top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: var(--space-md);
+}
+
+.hero__text {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.hero__title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  font-size: 26px;
+}
+
+.hero__subtitle {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.hero__badges {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero__badge {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.6);
+  color: var(--color-text-primary);
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero__badge--primary {
+  border-color: rgba(224, 122, 63, 0.35);
+  background: rgba(224, 122, 63, 0.12);
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero__panel {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.45);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+.hero__panelTitle {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.hero__hint {
+  margin-top: var(--space-sm);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+/* NOVO: lado direito do topo */
+.hero__right {
+  display: grid;
+  gap: var(--space-sm);
+  justify-items: end;
+}
+
+/* Em telas menores, alinha para a esquerda para não ficar estranho */
+@media (max-width: 520px) {
+  .hero__right {
+    justify-items: start;
+  }
+}
+
+/* CTA */
+.hero__cta {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Botões do hero */
+.hero__btn {
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease,
+    border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.hero__btn:active {
+  transform: scale(0.98);
+}
+
+.hero__btn--ghost {
+  background: rgba(28, 25, 22, 0.55);
+  color: var(--color-text-primary);
+}
+
+.hero__btn--ghost:hover {
+  border-color: rgba(224, 122, 63, 0.45);
+}
+
+.hero__btn--primary {
+  background: var(--color-primary);
+  border-color: rgba(224, 122, 63, 0.35);
+  color: #14110e;
+}
+
+.hero__btn--primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.hero__btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Welcome (quando logado) */
+.hero__welcome {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.55);
+}
+
+.hero__welcomeLabel {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero__welcomeName {
+  color: var(--color-text-primary);
+  font-weight: 900;
+}

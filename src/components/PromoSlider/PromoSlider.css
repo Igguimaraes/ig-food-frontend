@@ -1,0 +1,138 @@
+.ps {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.45);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.ps--empty {
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.ps__emptyTitle {
+  color: var(--color-text-primary);
+  font-weight: 900;
+}
+
+.ps__emptySub {
+  margin-top: var(--space-sm);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.ps__frame {
+  position: relative;
+  min-height: 240px;
+}
+
+.ps__slide {
+  min-height: 240px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.ps__content {
+  width: 100%;
+  padding: var(--space-lg);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.ps__tag {
+  display: inline-flex;
+  align-self: start;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  border: 1px solid rgba(224, 122, 63, 0.35);
+  background: rgba(224, 122, 63, 0.12);
+  color: var(--color-text-primary);
+  width: fit-content;
+}
+
+.ps__title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.ps__desc {
+  margin: 0;
+  color: rgba(245, 243, 239, 0.86);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+.ps__ctaRow {
+  margin-top: var(--space-xs);
+}
+
+.ps__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--color-primary-soft);
+}
+
+.ps__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(20, 17, 14, 0.6);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.ps__nav:hover {
+  border-color: rgba(224, 122, 63, 0.5);
+}
+
+.ps__nav--left {
+  left: 10px;
+}
+
+.ps__nav--right {
+  right: 10px;
+}
+
+.ps__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ps__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(184, 178, 168, 0.35);
+  background: rgba(184, 178, 168, 0.2);
+  cursor: pointer;
+}
+
+.ps__dot.is-active {
+  background: rgba(224, 122, 63, 0.9);
+  border-color: rgba(224, 122, 63, 0.9);
+}

@@ -1,0 +1,152 @@
+.opb {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(20, 17, 14, 0.35);
+  padding: var(--space-md);
+}
+
+.opb__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.opb__label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.opb__status {
+  color: var(--color-primary);
+  letter-spacing: 0.4px;
+}
+
+/* ✅ AQUI ESTÁ A CORREÇÃO PRINCIPAL
+   - overflow: visible (não corta labels)
+   - padding lateral (evita que o step 0% e 100% encostem na borda)
+*/
+.opb__track {
+  position: relative;
+  height: 76px;
+  border-radius: var(--radius-md);
+  background: rgba(28, 25, 22, 0.6);
+  border: 1px solid rgba(42, 37, 33, 0.8);
+
+  /* Mantém os steps dentro do card */
+  padding: 0 36px;
+  box-sizing: border-box;
+
+  /* Pode voltar para hidden agora, porque o step não vai mais "vazar" */
+  overflow: hidden;
+}
+
+/* Linha preenchida
+   ✅ agora respeita o padding (usa left/right dentro do track) */
+.opb__fill {
+  position: absolute;
+  top: 50%;
+  left: 36px;
+  height: 4px;
+  transform: translateY(-50%);
+  background: var(--color-primary);
+  opacity: 0.9;
+  border-radius: 999px;
+
+  max-width: calc(100% - 72px);
+}
+
+/* ✅ Como o fill agora começa em 36px, precisamos "corrigir" a largura
+   para caber na área útil (100% - 72px). */
+.opb__track .opb__fill {
+  max-width: calc(100% - 72px);
+}
+
+/* Steps */
+.opb__step {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  text-align: center;
+
+  width: 110px;
+  pointer-events: none;
+}
+
+/* Bolinha */
+.opb__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(184, 178, 168, 0.35);
+  border: 1px solid rgba(184, 178, 168, 0.45);
+}
+
+/* Texto */
+.opb__text {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.2px;
+  white-space: nowrap; /* ✅ evita quebrar e ficar estranho */
+}
+
+/* Done / Active */
+.opb__step.is-done .opb__dot {
+  background: rgba(224, 122, 63, 0.35);
+  border-color: rgba(224, 122, 63, 0.55);
+}
+
+.opb__step.is-active .opb__dot {
+  background: var(--color-primary);
+  border-color: rgba(224, 122, 63, 0.8);
+  box-shadow: 0 0 0 6px rgba(224, 122, 63, 0.14);
+}
+
+.opb__step.is-active .opb__text {
+  color: var(--color-text-primary);
+  font-weight: 900;
+}
+
+/* ✅ Mobile: reduzir largura do label para não encostar */
+@media (max-width: 520px) {
+  .opb__track {
+    padding: 0 18px;
+  }
+
+  .opb__fill {
+    left: 18px;
+    max-width: calc(100% - 36px);
+  }
+
+  .opb__step {
+    width: 72px;
+  }
+
+  .opb__text {
+    font-size: 10px;
+  }
+}
+
+/* Cancelado */
+.opb--canceled .opb__status {
+  color: var(--color-error);
+}
+
+.opb--canceled .opb__fill {
+  background: var(--color-error);
+}
+
+.opb__canceledText {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(209, 101, 93, 0.25);
+  background: rgba(209, 101, 93, 0.1);
+  color: var(--color-error);
+  font-weight: 800;
+  font-size: 12px;
+}

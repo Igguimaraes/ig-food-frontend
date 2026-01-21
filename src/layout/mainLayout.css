@@ -1,44 +1,45 @@
-.app {
+.layout {
   min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+
+  /* grid para header / content / footer */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* header fixo no topo com espaçamento */
+.layout__header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-lg) var(--space-md);
+
+  /* leve transparência para ficar elegante */
+  background: linear-gradient(
+    180deg,
+    rgba(20, 17, 14, 0.95),
+    rgba(20, 17, 14, 0.65)
+  );
+  backdrop-filter: blur(6px);
 }
 
-.app-header {
+/* conteúdo com largura máxima e centralizado */
+.layout__content {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+}
+
+/* footer discreto */
+.layout__footer {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-top: 20px;
-}
-
-.app-header nav a {
-  margin-left: var(--space-md);
-  color: var(--color-text-secondary);
-}
-
-.app-header nav a:hover {
-  color: var(--color-primary);
-}
-
-.app-content {
-  margin-top: 70px;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh -128px);
-  text-align: center;
-  padding: var(--space-xl);
-}
-
-.app-footer {
-  height: 48px;
-  background: var(--color-surface);
+  padding: var(--space-md);
   border-top: 1px solid var(--color-border);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.875rem;
   color: var(--color-text-secondary);
+  font-size: 12px;
 }

@@ -1,19 +1,22 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "./mainLayout.css";
 import MenuItem from "../components/MenuItem/MenuItem";
 
 export default function MainLayout() {
   return (
-    <div className="app">
-      <header className="app-header">
+    <div className="layout">
+      {/* Menu topo (fixo) */}
+      <header className="layout__header">
         <MenuItem />
       </header>
 
-      <main className="app-content">
+      {/* Conteúdo (centralizado) */}
+      <main className="layout__content">
         <Outlet />
       </main>
 
-      <footer className="app-footer">
+      {/* Rodapé */}
+      <footer className="layout__footer">
         <span>© 2026 - Igor Guimarães Dev.</span>
       </footer>
     </div>

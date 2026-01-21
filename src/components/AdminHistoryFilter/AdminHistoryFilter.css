@@ -1,0 +1,31 @@
+.ahf {
+  margin-top: var(--space-sm);
+  display: grid;
+  gap: 10px;
+}
+
+.ahf__input {
+  width: 100%;
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.55);
+  color: var(--color-text-primary);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  outline: none;
+}
+
+.ahf__select,
+.ahf__date {
+  border: 1px solid rgba(42, 37, 33, 0.9);
+  background: rgba(28, 25, 22, 0.55);
+  color: var(--color-text-primary);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  outline: none;
+}
+
+.ahf__dates {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
