@@ -184,21 +184,4 @@ Licença
 Este projeto é de uso educacional e demonstrativo.
 Defina uma licença caso deseje torná-lo open source.
 
----
 
-### Próximo passo (opcional, mas forte para portfólio)
-
-Posso melhorar ainda mais deixando:
-
-- README **100% alinhado ao seu código real**
-- Seção **“Arquitetura do Frontend”**
-- Seção **“Decisões técnicas”** (excelente para recrutador)
-- README **bilíngue (PT/EN)**
-
-Se quiser, me diga:
-
-1. Você usou **React + Vite**, **CRA** ou **Next.js**?
-2. Tem **React Router**?
-3. Onde você guarda o token (localStorage ou cookie)?
-
-Com isso, eu refino o README para nível **portfólio profissional**.
