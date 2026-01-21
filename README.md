@@ -1,70 +1,204 @@
-# Getting Started with Create React App
+# Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend da aplicação **DevsFood**, desenvolvido para consumir a API backend via HTTP, oferecendo uma interface moderna, responsiva e orientada à experiência do usuário.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Sumário
 
-### `npm start`
+- [Visão geral](#visão-geral)
+- [Tecnologias](#tecnologias)
+- [Funcionalidades](#funcionalidades)
+- [Pré-requisitos](#pré-requisitos)
+- [Configuração do ambiente](#configuração-do-ambiente)
+- [Variáveis de ambiente](#variáveis-de-ambiente)
+- [Como rodar o projeto](#como-rodar-o-projeto)
+- [Integração com o backend](#integração-com-o-backend)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Boas práticas adotadas](#boas-práticas-adotadas)
+- [Troubleshooting](#troubleshooting)
+- [Licença](#licença)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Visão geral
 
-### `npm test`
+O **DevsFood Frontend** é responsável por:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Exibir produtos e informações da aplicação
+- Realizar autenticação de usuários
+- Consumir a API backend de forma segura
+- Gerenciar estado e interação do usuário
 
-### `npm run build`
+O projeto foi estruturado com foco em **clareza de código**, **componentização** e **facilidade de manutenção**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tecnologias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Tecnologias normalmente utilizadas no frontend do projeto:
 
-### `npm run eject`
+- **React.js**
+- **JavaScript (ES6+)**
+- **HTML5**
+- **CSS3**
+- **Fetch API** para requisições HTTP
+- **JWT** (armazenado no navegador)
+- (Opcional) **React Router** para navegação
+- (Opcional) **Vite** ou **Create React App**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> Ajuste esta lista caso esteja usando Vite, Next.js ou outra stack específica.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Funcionalidades
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Interface para consumo da API DevsFood
+- Autenticação de usuários
+- Armazenamen
 
-## Learn More
+Instale as dependências:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Variáveis de ambiente
 
-### Code Splitting
+Crie um arquivo .env na raiz do frontend (exemplo para React):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+REACT_APP_API_URL=http://localhost:5010
 
-### Analyzing the Bundle Size
+Ou, se estiver usando Vite:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+VITE_API_URL=http://localhost:5010
 
-### Making a Progressive Web App
+Essas variáveis definem a URL base da API backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Como rodar o projeto
+Desenvolvimento
+npm start
 
-### Advanced Configuration
+ou, se usar Vite:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm run dev
 
-### Deployment
+A aplicação ficará disponível em:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+http://localhost:3000 (CRA)
 
-### `npm run build` fails to minify
+http://localhost:5173 (Vite)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Build de produção
+npm run build
+
+Integração com o backend
+
+O frontend se comunica com o backend via HTTP usando Fetch API.
+
+Exemplo de requisição autenticada:
+
+fetch(`${API_URL}/endpoint`, {
+method: "GET",
+headers: {
+"Authorization": `Bearer ${token}`,
+"Content-Type": "application/json"
+}
+});
+
+Fluxo de autenticação:
+
+Usuário realiza login
+
+Backend retorna token JWT
+
+Token é armazenado (ex.: LocalStorage ou Cookie)
+
+Token é enviado em requisições protegidas
+
+Estrutura do projeto
+
+Exemplo de estrutura recomendada:
+
+frontend/
+├─ public/
+├─ src/
+│ ├─ components/
+│ ├─ pages/
+│ ├─ services/
+│ │ └─ api.js
+│ ├─ styles/
+│ ├─ App.js
+│ └─ main.jsx
+├─ .env
+├─ package.json
+└─ README.md
+
+components: componentes reutilizáveis
+
+pages: telas da aplicação
+
+services: comunicação com a API
+
+styles: estilos globais ou por componente
+
+Boas práticas adotadas
+
+Separação de responsabilidades
+
+Componentização do layout
+
+Reutilização de funções de API
+
+Uso de variáveis de ambiente
+
+Código legível e organizado
+
+Pronto para escalar novas funcionalidades
+
+Troubleshooting
+API não responde
+
+Verifique se o backend está rodando
+
+Confirme a URL definida no .env
+
+Verifique CORS no backend
+
+Token inválido ou expirado
+
+Refazer login
+
+Limpar LocalStorage/Cookies
+
+Verificar expiração do JWT
+
+Erro ao rodar npm start
+
+Execute npm install novamente
+
+Apague node_modules e rode:
+
+npm install
+
+Licença
+
+Este projeto é de uso educacional e demonstrativo.
+Defina uma licença caso deseje torná-lo open source.
+
+---
+
+### Próximo passo (opcional, mas forte para portfólio)
+
+Posso melhorar ainda mais deixando:
+
+- README **100% alinhado ao seu código real**
+- Seção **“Arquitetura do Frontend”**
+- Seção **“Decisões técnicas”** (excelente para recrutador)
+- README **bilíngue (PT/EN)**
+
+Se quiser, me diga:
+
+1. Você usou **React + Vite**, **CRA** ou **Next.js**?
+2. Tem **React Router**?
+3. Onde você guarda o token (localStorage ou cookie)?
+
+Com isso, eu refino o README para nível **portfólio profissional**.
